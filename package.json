@@ -1,0 +1,11 @@
+{
+  "name": "stockapp",
+  "version": "1.0.0",
+  "description": "app communicates with slack to develop stock portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nic V",
+  "license": "ISC"
+}
