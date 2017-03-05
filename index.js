@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
 app.get('/', function(req,res){
-    db.stock.findAll()
+    db.portfolio.findAll()
     .then(function(stocks){
         res.render('main/index', {stocks: stocks});
     })
