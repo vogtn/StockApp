@@ -9,13 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
 app.get('/', function(req,res){
-    db.portfolio.findAll()
-    .then(function(stocks){
-        res.render('main/index', {stocks: stocks});
-    })
-    .catch(function(error){
-        res.status(400).render('main/404');
-    })
+    res.render('main/login');
 })
 
 app.use('/portfolio', require('./controllers/portfolio'));
