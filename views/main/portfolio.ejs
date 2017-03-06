@@ -1,0 +1,12 @@
+<h1>Portfolio</h1>
+
+<% stocks.forEach(function(stock){ %>
+  <div class="well">
+    <h2>
+      <a href=""><%= stock.stock_id %></a>
+      <small>bought on: <%= stock.date %></small>
+    </h2>
+    <h3>@ price:  $<%= stock.stock_price%></h3>
+  </div>
+
+<% }) %>
