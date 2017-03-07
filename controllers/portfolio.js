@@ -1,6 +1,7 @@
 var express = require('express');
 var db = require('../models');
 var router = express.Router();
+var request = require('request');
 
 router.get('/', function(req,res){
     db.portfolio.findAll()
@@ -12,8 +13,24 @@ router.get('/', function(req,res){
     })
 });
 
-router.get('/:id', function(req,res){
-    res.send(req.params.id);
+router.get('/:id/:date', function(req,res){
+    var d = new Date();
+    console.log(d.getDate());
+    var curdateM = d.getMonth();
+    var curdateD = d.getDate();
+    var curdateY = d.getFullYear();
+    var id = req.params.id;
+    //date separted in to (Month) + (date) + (year)
+    var buydateM = (req.params.date).split(" ")[1];
+    var buydateD = (req.params.date).split(" ")[2];
+    var buydateY = (req.params.date).split(" ")[3];
+    request({
+    url: 'http://www.google.com/finance/historical?q=NASDAQ:' + id  +'&startdate='+ buydateM +'+' + buydateD + '%2C+' + buydateY + '&enddate=Aug+2%2C+2012&output=csv'
+   }, function(error, response, body){
+     if(!error && response.statusCode == 200){
+       res.send(body);
+     }
+  })
 })
 
 

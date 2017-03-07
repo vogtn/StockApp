@@ -3,7 +3,7 @@
 <% stocks.forEach(function(stock){ %>
   <div class="well">
     <h2>
-      <a href="/portfolio/<%= stock.stock_id %>"><%= stock.stock_id %></a>
+      <a href="/portfolio/<%= stock.stock_id %>/<%= stock.date %>"><%= stock.stock_id %></a>
       <small>bought on: <%= stock.date %></small>
     </h2>
     <h3>@ price:  $<%= stock.stock_price%></h3>
