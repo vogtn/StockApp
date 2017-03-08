@@ -12,6 +12,12 @@ app.get('/', function(req,res){
     res.render('main/login');
 })
 
+app.get('/slack', function(req,res){
+    if(!req.query.code){
+        res.send('Youve been denied!');
+    }
+})
+
 app.use('/portfolio', require('./controllers/portfolio'));
 
 var server = app.listen(process.env.PORT || 3000);
