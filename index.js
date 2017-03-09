@@ -4,10 +4,13 @@ var ejsLayouts = require('express-ejs-layouts');
 var db = require('./models');
 var app = express();
 var request = require('request');
+require("dotenv").config();
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+
+
 
 app.get('/', function(req,res){
     res.render('main/login');
@@ -25,8 +28,10 @@ app.get('/slack', function(req,res){
   }};
   request.post('https://slack.com/api/oauth.access', data, function (error, response, body){
       if(!error && response.statusCode == 200){
-          let token = JSON.parse(body).access_token;
+          let teamId = JSON.parse(body).team.id;
           res.redirect('/portfolio');
+      }else{
+          res.redirect('/');
       }
   })
 })
