@@ -11,7 +11,7 @@ var passport = require('passport');
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
-
+app.use(express.static( "public" ));
 
 
 
@@ -63,9 +63,6 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/')
 }
 
-app.get('/protected', ensureAuthenticated, function(req, res) {
-  res.send("access granted");
-});
 
 app.use('/portfolio', ensureAuthenticated, require('./controllers/portfolio'));
 
