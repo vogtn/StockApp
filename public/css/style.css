@@ -1,0 +1,91 @@
+#gopher{
+    position: absolute; 
+}
+#title{
+    font-family: 'Pacifico';
+}
+
+h1 span {
+  font: 60px Monaco, MonoSpace;
+  font-family: 'Pacifico';
+  height: 1000px;
+  position: absolute;
+  width: 200px;
+  top: 100px;
+  transform-origin: bottom center;
+}
+
+.char1 {
+  transform: rotate(6deg);
+}
+
+.char2 {
+  transform: rotate(12deg);
+}
+
+.char3 {
+  transform: rotate(18deg);
+  color: #3EB890;
+}
+
+.char4 {
+  transform: rotate(24deg);
+  color: #E01765;
+}
+
+.char5 {
+  transform: rotate(30deg);
+}
+
+.char6 {
+  transform: rotate(36deg);
+  color: #70CADB;
+}
+
+.char7 {
+  transform: rotate(42deg);
+  color: #E8A723;
+}
+
+/*.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}*/
+
+.line{
+  height: 100vh;
+  border-bottom: 1px solid grey;
+  width: 100%;
+}
+.about-desc{
+  font-family: 'Indie Flower', cursive;
+  font-size: 70px;
+}
+.about{
+  text-align: center;
+  font-size: 40px;
+  margin-left: 2rem;
+  color: lightseagreen;
+}
+.about-secondary{
+  font-size: 20px;
+  font-style: italic;
+  color: black;
+}
+
+table {
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px black solid;
+    font: 12px sans-serif;
+}
+
+td {
+    border: 1px black solid;
+    margin: 20px;
+}
+
+#hideme{
+  display: none;
+}
