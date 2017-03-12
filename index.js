@@ -11,8 +11,12 @@ var passport = require('passport');
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
-app.use(express.static( "public" ));
+app.use(express.static("public"));
 
+var d3 = require('d3');
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+app.locals.XMLHttpRequest = XMLHttpRequest;
+app.locals.d3 = d3;
 
 
 

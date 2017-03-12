@@ -2,6 +2,7 @@ var express = require('express');
 var db = require('../models');
 var router = express.Router();
 var request = require('request');
+var d3 = require('d3');
 
 router.get('/', function(req,res){
     db.portfolio.findAll()
@@ -32,7 +33,7 @@ router.get('/:id/:date', function(req,res){
     url: 'http://www.google.com/finance/historical?q=NASDAQ:' + id  +'&startdate='+ buydateM +'+' + '01' + '%2C+' + buydateY + '&enddate='+curdateM +'+'+ curdateD+ '%2C+'+curdateY+'&output=csv'
    }, function(error, response, body){
      if(!error && response.statusCode == 200){
-       res.send(body);
+       res.render('main/graph', {data: body})
      }
   })
 })
