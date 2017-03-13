@@ -78,14 +78,13 @@ table {
     text-align: center;
     border-collapse: collapse;
     border: 2px black solid;
-    font: 12px sans-serif;
+    font-family: 'Pacifico';
+    font-size: 5rem;
 }
 
-td {
+td, th {
     border: 1px black solid;
-    margin: 20px;
 }
-
 #hideme{
   display: none;
 }
